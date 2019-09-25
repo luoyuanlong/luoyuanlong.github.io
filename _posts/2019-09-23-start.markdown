@@ -23,5 +23,17 @@ web:**draft**
 
 刚刚没保存
 ### 2.如何在*GitHub*上建立文件夹
-* item 1 从本地上传
+
+1.在线创建，名字后加“/”。
+2.本地上传，还在学习
+
+上传需掌握的命令
+
+git init
+
+cd 地址  / 可用 Git bush here 解决
+
+git add .与 git commit -m "更新内容"
+
+git push u- origin master 与git push u-origin +master强行上传
 
