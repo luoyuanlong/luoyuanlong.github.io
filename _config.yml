@@ -7,7 +7,7 @@
 
 # Site settings
 title: 趋静的场
-brief-intro: 写作、练习、感悟。
+brief-intro: 写字、练习、感悟。
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://luoyuanlong.github.io" # the base hostname & protocol for your site
 
