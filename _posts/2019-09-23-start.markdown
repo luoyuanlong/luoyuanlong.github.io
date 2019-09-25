@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "建立第二天"
+title:  "建立blog第二天"
 categories: 练习
 tags:  githubpage 
 author: 趋静
@@ -10,10 +10,10 @@ author: 趋静
 {:toc}
 
 
-# 建立第二天
+## 建立blog第二天
 > 决定还是自己从零建起
 
-## 1.在哪写Markdown的问题
+### 1.在哪写Markdown的问题
 ***
 win:**MarkPad**
 
@@ -22,6 +22,6 @@ web:**draft**
 空一行才是回车
 
 刚刚没保存
-## 2.如何在*GitHub*上建立文件夹
+### 2.如何在*GitHub*上建立文件夹
 * item 1 从本地上传
 
