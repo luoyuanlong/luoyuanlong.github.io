@@ -11,11 +11,12 @@ type: page
 
 ## 一些话
 
-<iframe src="https://githubbadge.appspot.com/gaohaoyang?s=1" style="border: 0;height: 142px;width: 200px;overflow: hidden;" frameBorder="0"></iframe>
 
 本科生，现就读于北京某211。
 
+
 涉猎广泛，一无所长，对“人”尤感兴趣。看书、听歌、游泳，三者尚稳定。
+
 
 于变换中寻找存在，在确定与不确定性中挣扎。
 
