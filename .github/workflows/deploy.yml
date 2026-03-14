@@ -29,5 +29,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
-          # 有自定义域名后取消注释，填入域名：
-          # cname: yourdomain.com
+          cname: luoyuanlong.com
