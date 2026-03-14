@@ -1,6 +1,6 @@
 main:
   push:
-    - imports: https://cnb.cool/qujingcc/qujing-secrets/-/blob/main/envs.yml
+    - imports: https://cnb.cool/qujingcc/secrets/-/blob/main/envs.yml
       stages:
         - name: Build
           image: oven/bun:latest
