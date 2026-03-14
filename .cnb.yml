@@ -11,3 +11,15 @@ main:
         - name: Deploy to EdgeOne Pages
           image: node:20
           script: npx edgeone pages deploy ./out -n qujingcc-blog -t $EDGEONE_API_TOKEN
+
+    - name: sync-github
+      docker:
+        image: alpine/git
+      imports:
+        - https://cnb.cool/qujingcc/secrets/-/blob/main/envs.yml
+      stages:
+        - name: 同步到 GitHub
+          script: |
+            git remote add github https://x-access-token:${GITHUB_TOKEN}@github.com/luoyuanlong/luoyuanlong.github.io.git
+            git push github HEAD:main --force
+            echo "✓ 已同步到 GitHub"
