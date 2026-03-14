@@ -6,7 +6,7 @@ main:
           image: oven/bun:latest
           script: |
             bun install
-            bun run build
+            NEXT_TELEMETRY_DISABLED=1 bun run build
 
         - name: Deploy to EdgeOne Pages
           image: node:20

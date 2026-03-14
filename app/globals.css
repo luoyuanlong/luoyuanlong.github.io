@@ -1,6 +1,9 @@
 @import "tailwindcss";
+/* 通过国内可访问的 CDN 加载 Noto Serif SC，浏览器端按需请求 */
+@import url("https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;700&display=swap");
 
 body {
+  font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
   color: #1a1a1a;
   background: #fff;
   font-size: 18px;
