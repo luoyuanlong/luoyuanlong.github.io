@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="渊默雷声">
+  <rect width="32" height="32" rx="6" fill="#1a1a1a"/>
+  <path d="
+    M 5 27
+    C 7 23 16 16 26 6
+    C 27 5 27 5 27 6
+    C 24 10 15 17 9 27
+    C 8 28 7 28 6 27
+    Z
+  " fill="#f0ebe0"/>
+</svg>
