@@ -21,3 +21,5 @@ docs/
 | 编号 | 日期 | 标题 |
 | ---- | ---- | ---- |
 | [001](changes/ops/001_blog-setup-deploy-domain.md) | 2026-03-14 | 渊默雷声博客搭建与双端部署配置 |
+| [002](changes/ops/002_blog-features-theme-icon.md) | 2026-03-14 | 博客栏目、配色与图标升级 |
+| [002](changes/ops/002_blog-features-theme-icon.md) | 2026-03-14 | 博客栏目、配色与图标升级 |
