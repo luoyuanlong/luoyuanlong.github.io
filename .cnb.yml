@@ -1,0 +1,12 @@
+main:
+  push:
+    - stages:
+        - name: Build
+          image: oven/bun:latest
+          script: |
+            bun install
+            bun run build
+
+        - name: Deploy to EdgeOne Pages
+          image: node:20
+          script: npx edgeone pages deploy ./out -n yuanmoleisheng -t $EDGEONE_API_TOKEN
