@@ -4,11 +4,15 @@
 
 body {
   font-family: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
-  color: #1a1a1a;
-  background: #fff;
+  color: #1a1714;
+  background: #f8f4ee;
   font-size: 18px;
   line-height: 1.85;
   -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: #e2d9cd;
 }
 
 a {
@@ -55,22 +59,22 @@ a:hover {
 }
 
 .prose blockquote {
-  border-left: 3px solid #ddd;
+  border-left: 3px solid #d4cabf;
   margin: 1.5rem 0;
   padding: 0.25rem 1rem;
-  color: #666;
+  color: #5c554e;
 }
 
 .prose code {
   font-family: "Courier New", Courier, monospace;
   font-size: 0.88em;
-  background: #f5f5f5;
+  background: #ede8e0;
   padding: 0.1em 0.35em;
   border-radius: 2px;
 }
 
 .prose pre {
-  background: #f5f5f5;
+  background: #ede8e0;
   padding: 1rem 1.25rem;
   overflow-x: auto;
   margin: 1.5rem 0;
@@ -88,6 +92,6 @@ a:hover {
 
 .prose hr {
   border: none;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #e0d8ce;
   margin: 2rem 0;
 }

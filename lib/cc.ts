@@ -5,9 +5,9 @@ import { remark } from "remark"
 import remarkGfm from "remark-gfm"
 import remarkHtml from "remark-html"
 
-const postsDirectory = path.join(process.cwd(), "content/posts")
+const ccDirectory = path.join(process.cwd(), "content/cc")
 
-export interface Post {
+export interface CcPost {
   slug: string
   title: string
   date: string
@@ -17,32 +17,31 @@ export interface Post {
   contentHtml: string
 }
 
-export function getAllPosts(): Omit<Post, "contentHtml">[] {
-  const fileNames = fs.readdirSync(postsDirectory)
+export function getAllCcPosts(): Omit<CcPost, "contentHtml">[] {
+  if (!fs.existsSync(ccDirectory)) return []
 
-  const posts = fileNames
-    .filter((name) => name.endsWith(".md"))
-    .map((fileName) => {
-      const slug = fileName.replace(/\.md$/, "")
-      const fullPath = path.join(postsDirectory, fileName)
-      const fileContents = fs.readFileSync(fullPath, "utf8")
-      const { data } = matter(fileContents)
+  const fileNames = fs.readdirSync(ccDirectory).filter((n) => n.endsWith(".md"))
 
-      const date = toDateString(data.date)
-      return {
-        slug,
-        title: data.title as string,
-        date,
-        dateSlug: date.replace(/-/g, ""),
-        author: data.author as string | undefined,
-        summary: data.summary as string | undefined,
-      }
-    })
+  const posts = fileNames.map((fileName) => {
+    const slug = fileName.replace(/\.md$/, "")
+    const fullPath = path.join(ccDirectory, fileName)
+    const fileContents = fs.readFileSync(fullPath, "utf8")
+    const { data } = matter(fileContents)
+    const date = toDateString(data.date)
+
+    return {
+      slug,
+      title: data.title as string,
+      date,
+      dateSlug: date.replace(/-/g, ""),
+      author: data.author as string | undefined,
+      summary: data.summary as string | undefined,
+    }
+  })
 
   return posts.sort((a, b) => (a.date < b.date ? 1 : -1))
 }
 
-// gray-matter 会把 YAML 日期自动解析为 Date 对象，统一转为 "YYYY-MM-DD" 字符串
 function toDateString(raw: unknown): string {
   if (raw instanceof Date) {
     const y = raw.getUTCFullYear()
@@ -53,11 +52,13 @@ function toDateString(raw: unknown): string {
   return String(raw)
 }
 
-export async function getPostByDate(dateSlug: string): Promise<Post | null> {
-  const fileNames = fs.readdirSync(postsDirectory).filter((n) => n.endsWith(".md"))
+export async function getCcPostByDate(dateSlug: string): Promise<CcPost | null> {
+  if (!fs.existsSync(ccDirectory)) return null
+
+  const fileNames = fs.readdirSync(ccDirectory).filter((n) => n.endsWith(".md"))
 
   for (const fileName of fileNames) {
-    const fullPath = path.join(postsDirectory, fileName)
+    const fullPath = path.join(ccDirectory, fileName)
     const fileContents = fs.readFileSync(fullPath, "utf8")
     const { data, content } = matter(fileContents)
     const date = toDateString(data.date)

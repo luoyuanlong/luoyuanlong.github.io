@@ -1,10 +1,14 @@
-import { getAllPosts } from "@/lib/posts"
+import type { Metadata } from "next"
 import Link from "next/link"
+import { getAllCcPosts } from "@/lib/cc"
 
-export default function Home() {
-  const posts = getAllPosts()
+export const metadata: Metadata = {
+  title: "CC",
+}
 
-  // 按年份分组
+export default function CcPage() {
+  const posts = getAllCcPosts()
+
   const byYear = posts.reduce<Record<number, typeof posts>>((acc, post) => {
     const year = parseInt(post.date.split("-")[0])
     if (!acc[year]) acc[year] = []
@@ -51,7 +55,7 @@ export default function Home() {
                 >
                   {formatMonthDay(post.date)}
                 </span>
-                <Link href={`/essays/${post.dateSlug}/`}>{post.title}</Link>
+                <Link href={`/cc/${post.dateSlug}/`}>{post.title}</Link>
               </li>
             ))}
           </ul>
@@ -59,7 +63,7 @@ export default function Home() {
       ))}
 
       {posts.length === 0 && (
-        <p style={{ color: "#999" }}>还没有文章。</p>
+        <p style={{ color: "#999" }}>还没有内容。</p>
       )}
     </div>
   )

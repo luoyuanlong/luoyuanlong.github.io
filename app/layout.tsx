@@ -32,9 +32,15 @@ export default function RootLayout({
             >
               渊默雷声
             </Link>
-            <nav style={{ marginTop: "0.4rem", fontSize: "0.9rem", color: "#888" }}>
+            <nav style={{ marginTop: "0.4rem", fontSize: "0.9rem", color: "#7c746c" }}>
               <Link href="/" style={{ marginRight: "1.25rem" }}>
-                文章
+                随笔
+              </Link>
+              <Link href="/cc" style={{ marginRight: "1.25rem" }}>
+                CC
+              </Link>
+              <Link href="/quotes" style={{ marginRight: "1.25rem" }}>
+                摘录
               </Link>
               <Link href="/about">关于</Link>
             </nav>
@@ -46,9 +52,9 @@ export default function RootLayout({
             style={{
               marginTop: "4rem",
               paddingTop: "1.5rem",
-              borderTop: "1px solid #eee",
+              borderTop: "1px solid #e0d8ce",
               fontSize: "0.85rem",
-              color: "#bbb",
+              color: "#b5ada4",
             }}
           >
             © {new Date().getFullYear()} 渊默雷声
