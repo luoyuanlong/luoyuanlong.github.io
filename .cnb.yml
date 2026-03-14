@@ -1,6 +1,7 @@
 main:
   push:
-    - stages:
+    - imports: https://cnb.cool/qujingcc/keys/-/blob/main/envs.yml
+      stages:
         - name: Build
           image: oven/bun:latest
           script: |
@@ -9,4 +10,4 @@ main:
 
         - name: Deploy to EdgeOne Pages
           image: node:20
-          script: npx edgeone pages deploy ./out -n yuanmoleisheng -t $EDGEONE_API_TOKEN
+          script: npx edgeone pages deploy ./out -n qujingcc-blog -t $EDGEONE_API_TOKEN
